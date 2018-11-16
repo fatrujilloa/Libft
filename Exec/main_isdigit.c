@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_memcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/11 19:49:39 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		main(int argc, char **argv)
 {
-	size_t	n_len;
-
-	n_len = ft_strlen(needle);
-	while (*haystack)
+	if (argc != 2)
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		printf("%s. Provide 1 number", argv[0]);
+		return (0);
 	}
-	return (NULL);
+	printf("\n CHARACTER:  %d \n", atoi(argv[1]));
+	printf("My result %d \n", ft_tolower(atoi(argv[1])));
+	printf("Ststem result %d \n", tolower(atoi(argv[1])));
+	return (0);
 }

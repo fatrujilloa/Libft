@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 17:10:59 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/07/12 14:40:15 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/10 22:26:44 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include "libft.h"
 
+size_t	ft_index(char c, char *s)
+{
+	size_t	i;
+	
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	while (s && s[i])
+	{
+		if (s[i++] == c)
+			return (i);
+	}
+	return (i);
 }

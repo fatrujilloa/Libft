@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_memcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/11 19:20:53 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strstr(const char *haystack, const char *needle)
+void	ft_test(char *s)
 {
-	size_t	n_len;
+	*s = *s - 1;
+}
 
-	n_len = ft_strlen(needle);
-	while (*haystack)
-	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
-	}
-	return (NULL);
+int		main(int argc, char **argv)
+{
+	void (*f)(char *);
+	int	nstr;
+	char *str;
+
+	if (argc != 3)
+		{
+		printf("Introduce a string and a number. 0 for NULL, 1 for string");
+		return (0);
+		}
+	nstr = atoi(argv[2]);
+	if (nstr == 0)
+		str = NULL;
+	else
+		str = argv[1];
+	f = &ft_test;
+	puts(str);
+	ft_striter(str, f);
+	puts(str);
+	return (0);
 }
