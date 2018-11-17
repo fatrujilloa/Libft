@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 19:29:30 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/17 14:38:51 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 int		main(int argc, char **argv)
 {
 	int ndst;
-	int nsrc;
+	char c;
 	char*  str1;
-	char*  str2;
-
-	if (argc != 6)
+	
+	if (argc != 4)
 	{
-		printf("%s. Provide 2 strings & 2 numbers. 0 = NULL, 1 = FirstString, 2 = SecondString & number of positions to compare \n", argv[0]);
+		printf("%s. Provide 1 string, 1 character (as int) and 1 number. 0 = NULL, 1 = FirstString\n", argv[0]);
 		return (0);
 	}
 	ndst = atoi(argv[3]);
-	nsrc = atoi(argv[4]);
-	str1 = (ndst == 0) ? NULL : argv[ndst];
-	str2 = (nsrc == 0) ? NULL : argv[nsrc];
-	printf("\nDESTINATION: %s, SOURCE: %s, NUMBER OF BYTES: %d\n\n", str1, str2, atoi(argv[5]));
-	printf("%d\n", ft_strncmp(str1,str2, atoi(argv[5])));
+	c = atoi(argv[2]);
+	str1 = (ndst == 0) ? NULL : argv[1];
+	printf("\nSTRING: %s, CHAR: %c\n\n", str1, c);
+	printf("Position %zu", ft_index(c, str1));
 	return (0);
 }
