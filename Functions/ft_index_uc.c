@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 16:46:10 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 19:14:07 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 20:53:57 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	char	*cdst;
-	char	*csrc;
+/*
+** Locates the position of the first occurence of c in the string s.
+** If c does not occur in the string it returns the lenght of the string.
+** If s = NULL it returns 0.
+*/
 
-	if (!len)
-		return (dst);
-	if (ft_memnlap_fwd(src, dst, len))
-		ft_memcpy(dst, src, len);
-	else
+size_t	ft_index_uc(unsigned char c, unsigned char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s && s[i])
 	{
-		while (len != 0)
-		{
-			cdst = (char*)dst;
-			csrc = (char*)src;
-			cdst[len - 1] = csrc[len - 1];
-			len--;
-		}
+		if (s[i] == c)
+			return (i);
+		i++;
 	}
-	return (dst);
+	return (i);
 }

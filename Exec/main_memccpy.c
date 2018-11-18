@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 16:38:23 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 20:47:28 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(int argc, char **argv)
 	printf("\nDESTINATION: %s, SOURCE: %s, CHARACTER: %c, NUMBER OF BYTES: %d\n\n", argv[ndst], argv[nsrc], qty1, qty2);
 	if (qty2 > 0)
 		printf("OVERLAP? %zu\n\n", ft_memnlap_fwd(argv[ndst], argv[nsrc], qty2 - 1) + ft_memnlap_fwd(argv[nsrc], argv[ndst], qty2 - 1));
-	memccpy(argv[ndst], argv[nsrc], qty1, qty2);
+	ft_memccpy(argv[ndst], argv[nsrc], qty1, qty2);
 	printf("MODIFIED DESTINATION: %s\n\n", argv[ndst]);
 	ft_putstr("ALL PARAMETERS: \n");
 	ft_print_params(argc, argv);
