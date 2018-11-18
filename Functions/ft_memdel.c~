@@ -1,19 +1,12 @@
 
 #include "libft.h"
 
-void	* ft_memalloc(size_t size)
+void	ft_memdel(void **ap)
 {
-	char	*str;
-	size_t	i;
-
-	if (!(str = (char*)malloc(size)))
-		return (NULL);
-	i = 0;
-	while (i < size)
+	if (ap)
 		{
-			str[i] = 0;
-			i++;
+			free(*ap);
+			*ap = NULL;
 		}
-	return (str);
 }
 

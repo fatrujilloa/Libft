@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 13:38:28 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 15:46:55 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	i;
+	t_list	*new;
 
-	i = 0;
-	while (s && s[i])
+	if (!(new = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	if (!content)
+		new->content = NULL;
+	else
 	{
-		if (s[i] == c)
-			return (i);
-		i++;
+		if(!(new->content = malloc(content_size)))
+			return (NULL);
+		ft_memmove(new->content, content, content_size);
 	}
-	return (i);
+	new->content_size = content_size;
+	new->next = NULL;
+	return (new);
 }

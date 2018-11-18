@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 16:38:33 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 14:30:29 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
+** Allocates at most n bytes of memory with malloc and makes a copy of 
+** the first n bytes in memory area src
+ */
 
-size_t	ft_index(char c, char *s)
+char	*ft_strndup(const char *s1, size_t n)
 {
+	char	*copy;
 	size_t	i;
 
+	if (!(copy = (char*)malloc(MIN(ft_strlen(s1), n) + 1)))
+		return (NULL);
 	i = 0;
-	while (s && s[i])
+	while (i <= ft_strlen(s1))
 	{
-		if (s[i] == c)
-			return (i);
+		copy[i] = s1[i];
 		i++;
 	}
-	return (i);
+	return (copy);
 }

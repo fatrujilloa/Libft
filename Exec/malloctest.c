@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   malloctest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 14:20:56 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 15:43:05 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+int	main(int argc, char **argv)
 {
-	size_t	i;
+	t_list	*new;
+	char	*str;
+	char	*ptr;
 
-	i = 0;
-	while (s && s[i])
+	if (argc != 2)
 	{
-		if (s[i] == c)
-			return (i);
-		i++;
+		printf("Introduce a string.\n");
+		return (0);
 	}
-	return (i);
+	str = argv[1];
+	new = ft_lstnew(str, ft_strlen(str));
+	ptr = (char*)new->content;
+	printf("%s", ptr);
+	return (0);
 }

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 15:27:08 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 15:54:42 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
+	t_list	**newlst;
+	t_list	*elem;
+	t_list	*next;
 
-	i = 0;
-	while (s && s[i])
+	if (!(newlst = (t_list**)malloc(sizeof(t_list*))))
+		return (NULL);
+	*newlst = NULL;
+	while (lst)
 	{
-		if (s[i] == c)
-			return (i);
-		i++;
+		next = lst->next;
+		lst = f(lst);
+		if(!(elem = ft_lstnew(lst->content, lst->content_size)))
+			return (NULL);
+		ft_lstadd(newlst, elem);
+		lst = next;		
 	}
-	return (i);
+	return (*newlst);
 }

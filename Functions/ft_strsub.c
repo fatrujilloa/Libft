@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/17 16:27:31 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/17 16:55:35 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
+	char	*trunc;
 	size_t	i;
 
+	if (!(trunc = (char*)malloc(len + 1)))
+		return (NULL);
 	i = 0;
-	while (s && s[i])
+	while (i < len)
 	{
-		if (s[i] == c)
-			return (i);
+		trunc[i] = s[start + i];
 		i++;
 	}
-	return (i);
+	trunc[len] = 0;
+	return (trunc);
 }

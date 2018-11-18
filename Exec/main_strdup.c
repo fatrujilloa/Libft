@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_strnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 13:42:43 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 13:50:12 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+int		main(int argc, char** argv)
 {
-	size_t	i;
+	char *str;
+	char *ptr;
+	int	ndest;
 
-	i = 0;
-	while (s && s[i])
-	{
-		if (s[i] == c)
-			return (i);
-		i++;
-	}
-	return (i);
+	if (argc != 3)
+		{
+			printf("%s. Type a string and a number: 0 = NULL, 1 = String.", argv[0]);
+			return (0);
+		}
+	ndest = atoi(argv[2]);
+	ptr = ndest == 0 ? NULL : argv[1];
+	puts(ptr);
+	str = strdup(ptr);
+	puts(str);
+	printf("Now Clearing \n");
+	ft_strclr(str);
+	puts(str);
+	return (0);
 }

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 14:32:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/17 17:25:04 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/17 18:12:34 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Locates the position of the first occurence of c in the string s.
-** If c does not occur in the string it returns the lenght of the string.
-** If s = NULL it returns 0.
-*/
-
-size_t	ft_index(char c, char *s)
+char	*ft_strtrim(char const *s)
 {
-	size_t	i;
+	size_t	l;
 
-	i = 0;
-	while (s && s[i])
+	if (!s)
+		return (NULL);
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	l = ft_strlen(s);
+	s = l ? s + l - 1 : s;
+	while (*s == ' ' || *s == '\n' || *s == '\t')
 	{
-		if (s[i] == c)
-			return (i);
-		i++;
+		s--;
+		l--;
 	}
-	return (i);
+	return (ft_strsub(s - l + 1, 0, l));
 }
