@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 17:16:07 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/07/11 19:54:01 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:52:02 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_itoa(int n)
 {
 	long	nb;
 	char	*p;
-	char   	sgn;
+	char	sgn;
 	int		i;
 
 	if (!(p = (char*)malloc(12)))

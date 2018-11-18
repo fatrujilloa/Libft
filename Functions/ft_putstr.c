@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 15:16:58 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/10 15:19:06 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:55:41 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr(char const *s)
 {
 	if (s)
-		write (1, s, ft_strlen(s));
+		write(1, s, ft_strlen(s));
 }

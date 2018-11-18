@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 13:38:28 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 15:46:55 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:53:11 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		new->content = NULL;
 	else
 	{
-		if(!(new->content = malloc(content_size)))
+		if (!(new->content = malloc(content_size)))
 			return (NULL);
 		ft_memmove(new->content, content, content_size);
 	}

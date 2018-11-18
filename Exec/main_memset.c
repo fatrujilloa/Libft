@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 15:16:56 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:47:58 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int		main(int argc, char **argv)
 	nsrc = atoi(argv[6]);
 	qty1 = atoi(argv[7]);
 	qty2 = atoi(argv[8]);
-	ft_memset(argv[ndst], qty1, qty2);
 	printf("QUANTITIES: %d, %d\n", qty1, qty2);
 	printf("DESTINATION: ");
 	puts (argv[ndst]);
 	printf("SOURCE: ");
 	puts (argv[nsrc]);
+	ft_memset(argv[ndst], qty1, qty2);
 	ft_putstr("ALL PARAMETERS: \n");
 	ft_print_params(argc, argv);
 	return (0);

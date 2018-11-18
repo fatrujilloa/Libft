@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstprt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 14:46:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 15:05:20 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 16:17:31 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 16:28:01 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstprt(t_list *lst)
 {
-	t_list	*next;
-
-	if (!alst)
-		return ;
-	while (*alst)
+	while (lst)
 	{
-		next = alst->next;
-		del(*alst->content, size_t);
-		free(*alst);
-		*alst = next;
+		ft_putnstr((char*)lst->content, lst->content_size);
+		ft_putstr("\n");
+		lst = lst->next;
 	}
-	alst = NULL;
 }

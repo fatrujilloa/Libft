@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 14:46:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 15:45:45 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 16:57:56 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 		free(*alst);
 		*alst = next;
 	}
-	alst = NULL;
 }
