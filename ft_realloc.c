@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/12/02 22:51:53 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/19 14:04:45 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
-{
-	size_t	n_len;
+/*
+** Reallocates the memory zone (of the given size) pointed to by ptr.
+*/
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
-	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
-	}
-	return (NULL);
+void	*ft_realloc(void *ptr, size_t size)
+{
+	void	*newptr;
+
+	if (!(newptr = malloc(size)))
+		return (NULL);
+	ft_memcpy(newptr, ptr, size);
+	return (newptr);
 }

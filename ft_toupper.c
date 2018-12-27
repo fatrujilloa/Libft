@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/18 18:00:03 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/27 11:41:33 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		ft_toupper(int c)
 {
-	size_t	n_len;
-
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
-	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
-	}
-	return (NULL);
+	if (c > 96 && c < 123)
+		return (c - 32);
+	return (c);
 }

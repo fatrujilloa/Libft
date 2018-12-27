@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 18:10:52 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/27 11:31:05 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	n_len;
+	size_t	l1;
+	size_t	l2;
+	size_t	s;
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
-	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
-	}
-	return (NULL);
+	l1 = ft_strlen(dst);
+	l2 = ft_strlen(src);
+	s = l2 + ft_min(l1, size);
+	if (size <= l1)
+		return (s);
+	ft_strncat(dst, src, size - l1 - 1);
+	return (s);
 }

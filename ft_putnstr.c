@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 15:16:58 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/27 11:28:59 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
-{
-	size_t	n_len;
+/*
+** Write in stdout at most n bytes of the string s
+*/
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
-	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
-	}
-	return (NULL);
+void	ft_putnstr(char const *s, size_t n)
+{
+	if (s)
+		write(1, s, ft_min(ft_strlen(s), n));
 }

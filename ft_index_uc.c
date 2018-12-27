@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 20:53:57 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
-{
-	size_t	n_len;
+/*
+** Locates the position of the first occurence of c in the string s.
+** If c does not occur in the string it returns the lenght of the string + 1.
+** If s = NULL it returns 0.
+*/
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+size_t	ft_index_uc(unsigned char c, unsigned char *s)
+{
+	size_t	i;
+	size_t	l;
+
+	if (!s)
+		return (0);
+	l = ft_strlen((char*)s);
+	i = 0;
+	while (i <= l)
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		if (s[i] == c)
+			return (i);
+		i++;
 	}
-	return (NULL);
+	return (i);
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/11 16:46:10 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/18 19:14:07 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	n_len;
+	char	*cdst;
+	char	*csrc;
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+	if (len == 0 || !ft_memnlap_fwd(src, dst, len - 1))
+		return (ft_memcpy(dst, src, len));
+	else
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		while (len)
+		{
+			cdst = (char*)dst;
+			csrc = (char*)src;
+			cdst[len - 1] = csrc[len - 1];
+			len--;
+		}
 	}
-	return (NULL);
+	return (dst);
 }

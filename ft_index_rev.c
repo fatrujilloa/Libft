@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_index_rev.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 21:57:52 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/26 22:27:02 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
-{
-	size_t	n_len;
+/*
+** Locates the position of the last occurence of c in the string s.
+** If c does not occur in the string it returns the -1.
+** If s = NULL it returns -1.
+*/
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+ssize_t	ft_index_rev(char c, char *s)
+{
+	ssize_t	i;
+
+	if (!s)
+		return (-1);
+	i = ft_strlen(s) - 1;
+	while (i >= 0)
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		if (s[i] == c)
+			return (i);
+		i--;
 	}
-	return (NULL);
+	return (i);
 }

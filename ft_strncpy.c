@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 21:24:12 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/27 11:39:27 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	n_len;
+	size_t	i;
+	size_t	min;
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+	i = 0;
+	if (!len)
+		return (dst);
+	min = ft_min(ft_strlen(src), len);
+	if (ft_memnlap_fwd(dst, src, min))
+		return (dst);
+	while (i < min)
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		dst[i] = src[i];
+		i++;
 	}
-	return (NULL);
+	while (i < len)
+		dst[i++] = 0;
+	return (dst);
 }

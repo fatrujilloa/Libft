@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 18:02:18 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/12/27 11:32:21 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t	n_len;
+	size_t	l1;
+	size_t	l2;
+	size_t	i;
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	i = 0;
+	if (ft_memnlap_fwd(s1, s2, l1 + ft_min(l2, n)))
+		return (s1);
+	while (i < ft_min(l2, n))
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		s1[l1 + i] = s2[i];
+		i++;
 	}
-	return (NULL);
+	s1[l1 + i] = 0;
+	return (s1);
 }

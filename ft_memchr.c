@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:34:18 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 14:58:45 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/11 16:46:40 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/11 17:02:01 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	n_len;
+	unsigned char	*str;
+	unsigned char	uc;
+	size_t			i;
+	void			*loc;
 
-	n_len = ft_strlen(needle);
-	if (!*haystack && !n_len)
-		return ((char*)haystack);
-	while (*haystack)
+	str = (unsigned char*)s;
+	uc = (unsigned char)c;
+	i = 0;
+	while (i < n)
 	{
-		if (ft_strncmp(haystack, needle, n_len) == 0)
-			return ((char*)haystack);
-		haystack++;
+		if (*str == uc)
+		{
+			loc = (void*)str;
+			return (loc);
+		}
+		else
+		{
+			i++;
+			str++;
+		}
 	}
 	return (NULL);
 }
