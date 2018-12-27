@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 11:34:31 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/12/27 12:38:02 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ size_t			ft_max(size_t a, size_t b);
 size_t			ft_memlap_fwd(void *s1, void *s2);
 size_t			ft_memnlap_fwd(const void *s1, const void *s2, size_t n);
 size_t			ft_index(char c, char *s);
+ssize_t			ft_index_rev(char c, char *s);
 size_t			ft_index_uc(unsigned char c, unsigned char *s);
 size_t			ft_memindex(unsigned char c, void *s, size_t n);
 void			*ft_memjoin_alloc(void *s1, void *s2, size_t n1, size_t n2);
