@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2018/12/27 11:40:06 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/01/19 15:45:55 by flbartol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = 			libft.a
 
 CFLAGS = 		-Wall -Wextra -Werror
 
-SRC =			ft_max_int.c\
+SRC =			ft_index_rev.c\
+ft_max_int.c\
 ft_min_int.c\
 ft_max.c\
 ft_min.c\
@@ -91,18 +92,23 @@ ft_strtrim.c\
 ft_tolower.c\
 ft_toupper.c\
 
-OBJ =			$(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-all: 			$(NAME) $(SRC)
+all: $(NAME) $(SRC)
 
-$(NAME):		$(OBJ)
-				ar rc libft.a $(OBJ)
-				ranlib libft.a
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib libft.a
 
-clean: 
-				rm -f $(OBJ)
+%.o: %.c
+	@cc $(CFLAGS) -o $@ -c $<
 
-fclean: 		clean
-				rm -f $(NAME)
+clean:
+	@rm -rf $(OBJ)
 
-re:				fclean all
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean re all
