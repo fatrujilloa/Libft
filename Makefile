@@ -6,7 +6,7 @@
 #    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/01/19 15:45:55 by flbartol         ###   ########.fr        #
+#    Updated: 2019/05/29 13:56:28 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = 			libft.a
 CFLAGS = 		-Wall -Wextra -Werror
 
 SRC =			ft_index_rev.c\
+ft_itoa_base.c\
+ft_strlower.c\
 ft_max_int.c\
 ft_min_int.c\
 ft_max.c\

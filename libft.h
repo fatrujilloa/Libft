@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 12:38:02 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/05/29 13:55:40 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+/*
+** String Manipulation
+*/
+char			*ft_strlower(char *str);
+char			*ft_itoa_base(unsigned long long value, int base);
+/*
+** Not organized
+*/
 int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
 size_t			ft_min(size_t a, size_t b);
