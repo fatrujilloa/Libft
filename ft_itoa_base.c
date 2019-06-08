@@ -20,27 +20,40 @@ char	base_element(int n)
 		return ('A' + n - 10);
 }
 
+int		conversion_size(unsigned long long value, int base)
+{
+	int size;
+
+	if (value == 0)
+		return (2);
+	size = 1;
+	while(value > 0)
+		{
+			value = value / base;
+			size++;
+		}
+	return (size + 1);
+}
+
 char	*ft_itoa_base(unsigned long long value, int base)
 {
-	unsigned long long	n;
-	char				*p;
-	int					i;
+	char	*p;
+	int		i;
 
 	if (base <= 1 || base >= 17)
 		return (0);
-	n = value;
-	if (!(p = (char*)malloc(sizeof(char) * 50)))
+	if (!(p = (char*)malloc(conversion_size(value, base))))
 		return (0);
 	i = 0;
-	p[i] = base_element(n % base);
+	p[i] = base_element(value % base);
 	i++;
-	while (n / base > 0)
+	while (value / base > 0)
 	{
-		n = n / base;
-		p[i] = base_element(n % base);
+		value = value / base;
+		p[i] = base_element(value % base);
 		i++;
 	}
-	p[i] = '\0';
+	p[i] = 0;
 	ft_strrev(p);
 	return (p);
 }
