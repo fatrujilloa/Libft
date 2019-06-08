@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
+#    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/05/29 13:56:28 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/06/08 17:09:21 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = 			libft.a
 
 CFLAGS = 		-Wall -Wextra -Werror
 
-SRC =			ft_index_rev.c\
+SRC =			get_next_line.c\
+ft_index_rev.c\
 ft_itoa_base.c\
 ft_strlower.c\
 ft_max_int.c\
