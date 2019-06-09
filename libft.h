@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/05/29 13:55:40 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/06/08 18:59:15 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ typedef struct	s_list
 char			*ft_strlower(char *str);
 char			*ft_itoa_base(unsigned long long value, int base);
 /*
+** Char/String verification
+*/
+int     		ft_isstrnum(char *str);
+/*
 ** Not organized
 */
+int				get_next_line(const int fd, char **line);
 int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
 size_t			ft_min(size_t a, size_t b);
