@@ -36,11 +36,7 @@ int     		ft_isstrnum(char *str);
 /*
 ** Not organized
 */
-<<<<<<< HEAD
-int             get_next_line(const int fd, char **line);
-=======
 int				get_next_line(const int fd, char **line);
->>>>>>> 8069d6a41ffa65b420347653ccc96dec9e31aacc
 int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
 size_t			ft_min(size_t a, size_t b);
