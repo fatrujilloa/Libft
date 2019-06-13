@@ -6,7 +6,7 @@
 #    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/06/08 17:09:21 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/06/08 17:38:49 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ ft_isalpha.c\
 ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
+ft_isstrnum.c\
 ft_itoa.c\
 ft_lstadd.c\
 ft_lstdel.c\
