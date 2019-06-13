@@ -32,6 +32,7 @@ char			*ft_itoa_base(unsigned long long value, int base);
 /*
 ** Not organized
 */
+int             get_next_line(const int fd, char **line);
 int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
 size_t			ft_min(size_t a, size_t b);
