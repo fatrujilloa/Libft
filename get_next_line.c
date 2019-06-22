@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 15:25:23 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/22 12:12:43 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/06/15 23:08:49 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,11 @@ int			free_stuff(char *str, char **line, size_t size)
 {
 	free(str);
 	if (size == 0)
-		free(*line);
+		{
+			free(*line);
+			if (!(*line = (char*)malloc(0)))
+				return (-1);
+		} 
 	return (size ? 1 : 0);
 }
 
