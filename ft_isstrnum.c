@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/08 17:22:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/06/09 11:47:51 by ftrujill         ###   ########.fr       */
+/*   Created: 2019/07/12 14:56:01 by ftrujill          #+#    #+#             */
+/*   Updated: 2019/07/12 14:56:04 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isstrnum(char *str)
+int		ft_isstrnum(char *str)
 {
-    if (!str || !*str)
-        return (1);
-    if (*str == '+' || *str == '-')
-        str++;
-    while (*str)
-    {
-        if (!ft_isdigit(*str++))
-            return (0);
-    }
-    return (1);
+	if (!str || !*str)
+		return (1);
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str++))
+			return (0);
+	}
+	return (1);
 }

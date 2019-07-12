@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/06/08 18:59:15 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/12 14:58:10 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char			*ft_itoa_base(unsigned long long value, int base);
 /*
 ** Char/String verification
 */
-int     		ft_isstrnum(char *str);
+int				ft_isstrnum(char *str);
 /*
 ** Not organized
 */
