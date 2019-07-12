@@ -6,13 +6,13 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 11:40:36 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 11:40:36 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/12 15:08:35 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_max(size_t a, size_t b)
+ssize_t			ft_max(ssize_t a, ssize_t b)
 {
 	return (a < b ? b : a);
 }

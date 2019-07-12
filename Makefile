@@ -6,7 +6,7 @@
 #    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/06/08 17:38:49 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/07/12 15:05:37 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = 			libft.a
 
 CFLAGS = 		-Wall -Wextra -Werror
 
-SRC =			get_next_line.c\
+SRC =			ft_printf.c get_arg.c aux_print.c aux.c conversions_1.c conversions_2.c conversions_3.c\
+get_next_line.c\
 ft_index_rev.c\
 ft_itoa_base.c\
 ft_strlower.c\
