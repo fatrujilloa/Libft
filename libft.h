@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/12 15:14:40 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/12 15:20:00 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int				ft_isstrnum(char *str);
 int				get_next_line(const int fd, char **line);
 int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
+int				ft_abs_int(int x);
 size_t			ft_min(size_t a, size_t b);
 ssize_t			ft_max(ssize_t a, ssize_t b);
 size_t			ft_memlap_fwd(void *s1, void *s2);

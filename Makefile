@@ -6,7 +6,7 @@
 #    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/07/12 15:05:37 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/07/12 15:21:23 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ ft_itoa_base.c\
 ft_strlower.c\
 ft_max_int.c\
 ft_min_int.c\
+ft_abs_int.c\
 ft_max.c\
 ft_min.c\
 ft_lstdelnext.c\
