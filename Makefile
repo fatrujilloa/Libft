@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/07/12 15:21:23 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/07/13 16:24:20 by ftrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ ft_memindex.c\
 ft_memjoin_alloc.c\
 ft_memjoin_allocf.c\
 ft_atoi.c\
+ft_atoi_ovflw.c\
 ft_bzero.c\
 ft_index.c\
 ft_index_uc.c\
