@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isstrnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 14:56:01 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/12 14:56:04 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 13:19:36 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int		ft_isstrnum(char *str)
 {
 	if (!str || !*str)
-		return (1);
+		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
+	if (!*str)
+		return (0);
 	while (*str)
 	{
 		if (!ft_isdigit(*str++))
